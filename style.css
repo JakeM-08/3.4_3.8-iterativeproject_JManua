@@ -30,11 +30,6 @@ header {
     padding: 16px 32px; /* Padding around content */
 }
 
-/* Logo text */
-.logo {
-    font-weight: 700; /* Bold text */
-    font-size: 14px; /* Small size text */
-}
 
 /* Navigation list styles */
 nav ul {
@@ -58,9 +53,162 @@ nav a {
 /* Active menu item - Home */
 nav a.active {
     font-weight: 700; /* Bold for active */
-	background-color: white;
 }
+
+/* Heading section container */
+.image {
+  position: relative; /* This is essential for the pseudo-element to work correctly */
+  background-image: url(../images/mtcook72.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 300px 32px;
+  box-sizing: border-box;
+}
+
+/* Add the pseudo-element for the semi-transparent overlay */
+.image::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity (0.7) as needed */
+  z-index: 0; /* Place the overlay behind the text content */
+}
+
+/* Ensure the text and underline are positioned correctly and are on top of the overlay */
+.image h1,
+.image p,
+.image .underline {
+  position: relative; /* This creates a new stacking context for these elements */
+  z-index: 1; /* This ensures they stack on top of the pseudo-element (z-index: 0) */
+  color: white; /* Make sure the text color is light enough to be seen */
+}
+
+/* text styles are applied */
+.image h1 {
+  font-weight: 500;
+  font-size: 100px;
+  margin: 0 0 8px 0;
+  padding-left: 100px;
+}
+
+.image p {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-left: 100px;
 	
+}
+
+/* Light colored text inside hero paragraph */
+.light-text {
+    color: #d3d3d3; /* White text */
+}
+
+/* Small underline below hero paragraph */
+.underline {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+	margin-left: 100px; /* Positions text */
+	opacity: 1.0;
+}
+
+/* Content section styles */
+.content {
+    padding: 64px 32px; /* Padding around content */
+    width: 100%; /* Fill full viewport width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Content heading */
+.content h2 {
+    font-weight: 700; /* Bold */
+    font-size: 30px; /* Medium size */
+    margin: 0 0 8px 0; /* Margin bottom only */
+}
+
+
+/* Subheading text */
+.subheading {
+    font-weight: 400; /* Normal */
+    font-size: 20px; /* Standard readable font size */
+    line-height: 1.5; /* Line spacing for readability */
+	margin-bottom: 40px;
+}
+
+
+/* Paragraph text */
+.content p {
+    font-weight: 400; /* Normal */
+    font-size: 20px; /* Standard readable font size */
+    line-height: 1.5; /* Line spacing for readability */
+	margin-top:-10px;
+}
+
+.container {
+  text-align: center;
+  background-color: black;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding-bottom: 100px;
+}
+
+.container h1 {
+	color: #FFFFFF;
+	padding-top: 30px;
+	font-size: 35px;
+}
+
+.container p {
+	color: #FFFFFF;
+	padding-bottom: 30px;
+}
+
+
+.gray {
+  color: #aaa;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #d7d7d7;
+  color: black;
+  width: 250px;
+  height: 400px;
+  font-family: 'Poppins', sans-serif; /* Use Google font Poppins */
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.grid-container { /*Creates grid for my website*/
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh 45vh 60vh 70vh 45vh 20vh;
+  height: 100vh;
+}
 
 .nav {
   box-sizing: border-box;
@@ -146,402 +294,124 @@ transition: all .2s ease-in-out;
 transform: scale(1.1);
 }
 
+/* Style for Navigation ends here*/
 
-/* Heading section container */
-.image {
-  position: relative; /* This is essential for the pseudo-element to work correctly */
-  background-image: url(../images/auckland72.jpg);
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  padding: 300px 32px;
-  box-sizing: border-box;
+.visa-entry {
+	padding: 64px 32px; /* Padding around content */
+    width: 100%; /* Fill full viewport width */
+    box-sizing: border-box; /* Include padding in width */
 }
 
-/* Add the pseudo-element for the semi-transparent overlay */
-.image::before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity (0.7) as needed */
-  z-index: 0; /* Place the overlay behind the text content */
+.visa-entry h2 {
+	font-weight: 100; /* Bold */
+    font-size: 20px; /* Medium size */
+    margin: 0 0 8px 0; /* Margin bottom only */
 }
 
-/* Ensure the text and underline are positioned correctly and are on top of the overlay */
-.image h1,
-.image p,
-.image .underline {
-  position: relative; /* This creates a new stacking context for these elements */
-  z-index: 1; /* This ensures they stack on top of the pseudo-element (z-index: 0) */
-  color: white; /* Make sure the text color is light enough to be seen */
+/* Small underline below header */
+.underline1 {
+    width: 20px;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
 }
 
-/* text styles are applied */
-.image h1 {
-  font-weight: 500;
-  font-size: 100px;
-  padding-left: 100px;
+.intro {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    margin-top: 50px; 
 }
 
-.image p {
-  font-weight: 400;
-  font-size: 20px;
-  padding-left: 100px;
-	
-}
-
-/* Light colored text inside hero paragraph */
-.light-text {
-    color: #FFFFFF; /* White text */
+.requirements-intro {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    margin: 0; /* No margin */
 }
 
 
-.container {
-  text-align: center;
-  background-color: black;
-  margin-bottom: 50px;
-  padding-bottom: 100px;
+li {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    margin: 0; /* No margin */
+}
+
+.biosecurity {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    margin-top: 40px;
+}
+
+.digital-nomad {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    
+}
+
+.details {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    margin-top: 40px;
+	margin-bottom: 60px;
+}
+
+. {
+	font-weight: 400; /* Normal */
+    font-size: 18px; /* Slightly bigger font */
+    margin: 0; /* No margin */
 }
 
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  justify-content: center;
-  box-sizing: border-box;
-  padding-top: 60px;
-}
-
-.card {
-  background-color: #d7d7d7;
-  color: white;
-  width: 400px;
-  height: 250px;
-  font-family: 'Poppins', sans-serif; /* Use Google font Poppins */
-  border-radius: 10px;
-  font-weight: bold; /* Bold text*/
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s;
-}
-
-
-
-.card:hover {
-	transform: scale(1.05); /* Controls the size of the cards */
-}
-
-
-/* Table */
-table {
+.box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    border-collapse: collapse; /* Optional: for cleaner borders */
-  }
-  th, td {
-    border: 0px solid black; /* Optional: for visible borders */
-    padding: 8px; /* Optional: for spacing within cells */
-    text-align: left; /* Optional: for text alignment */
-	vertical-align: top; /* Optional: for cell alignment top middle bottom */
-  }
-  .col1 {
-    width: 25%;
-  }
-  .col2 {
-    width: 25%;
-  }
-  .col3 {
-    width: 25%;
-  }
-  .col4 {
-    width: 25%;
-  }
-
-
-/* Content section styles */
-.content {
-	box-sizing: border-box; /* Include padding in width */
-	background-color: white;
-	position: relative;
-	padding-left: 50px; /* Padding around content */
-    width: 100%; /* Fill full viewport width */
 }
 
-
-.card {
-  background-color: #d7d7d7;
-  color: white;
-  width: 400px;
-  height: 250px;
-  font-family: 'Poppins', sans-serif; /* Use Google font Poppins */
-  border-radius: 10px;
-  font-weight: bold; /* Bold text*/
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s;
+.box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+	margin-left: 20px;
 }
 
-/* Content section styles */
-.content {
-	padding: 30px 1000px 100px 50px; /* Padding around content */
-    width: 100%; /* Fill full viewport width */
-    box-sizing: border-box; /* Include padding in width */
+.form-group {
+    margin-bottom: 15px;
 }
 
-
-/* main heading */
-#h-content1 {
-    font-weight: 700px; /* normal */
-    font-size: 40px; /* Large text */
-    padding-top: 50px;/* Positions text */
-	padding-left: 50px;
-	color: black;
-	display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: left; /* Horizontally centers text */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
 }
 
-/* main heading */
-#h-content2 {
-    font-weight: 700px; /* normal */
-    font-size: 40px; /* Large text */
-    padding-top: 50px;
-	padding-left: 50px;/* Positions text */
-	color: black;
-		display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: left; /* Horizontally centers text */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-
-
-
-
-#h1 {
-    font-weight: 700; /* Bold */
-    font-size: 30px; /* Medium size */
-	padding: 50px 50px 0px 650px; 
-	color: black;
-	display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: center; /* Horizontally centers text*/ 
+textarea {
+    resize: vertical;
 }
 
-
-#h2 {
-    font-weight: 700; /* Bold */
-    font-size: 30px; /* Medium size */
-	margin-left: 50px;
-	color: black;
-	display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: left; /* Horizontally centers text */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
 }
 
-
-.paragraph-header {
-    font-weight: 700; /* Bold */
-    font-size: 30px; /* Medium size */
-	color: black;
-	display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: right; /* Horizontally centers text */
-}
-
-
-.paragraph-text {
-    font-weight: 400; /* Normal */
-    font-size: 20px; /* Standard readable font size */
-    line-height: 1.5; /* Line spacing for readability */
-    box-sizing: border-box; /* Include padding in width */
-	color: black;
-		display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: right; /* Horizontally centers text */
-  margin: auto;
-}
-
-
-#p3 {
-    font-weight: 400; /* Normal */
-    font-size: 20px; /* Standard readable font size */
-    line-height: 1.5; /* Line spacing for readability */
-	box-sizing: border-box; /* Include padding in width */
-	color: black;
-	padding-left: 50px;
-		display: flex; /* Activates Flexbox for its text */
-  align-items: left; /* Vertically centers text */
-  justify-content: left; /* Horizontally centers text */
-}
-
-
-#p4 {
-    font-weight: 400; /* Normal */
-    font-size: 20px; /* Standard readable font size */
-    line-height: 1.5; /* Line spacing for readability */
-	padding: 30px 40px 150px 650px; /*positioning text*/
-	color: black;
-		display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: center; /* Horizontally centers text */
-}
-
-#p5 {
-    font-weight: 400; /* Normal */
-    font-size: 20px; /* Standard readable font size */
-    line-height: 1.5; /* Line spacing for readability */
-	padding: 30px 40px 100px 650px; /*positioning text*/
-	color: black;
-		display: flex; /* Activates Flexbox for its text */
-  align-items: center; /* Vertically centers text */
-  justify-content: center; /* Horizontally centers text */
-}
-
-
-#p6 {
-    font-weight: 700; /* Normal */
-    font-size: 20px; /* Standard readable font size */
-    line-height: 1.5; /* Line spacing for readability */
-	box-sizing: border-box; /* Include padding in width */
-	padding-left: 50px;
-	color: black;
-		display: flex; /* Activates Flexbox for its text */
-  align-items: left; /* Vertically centers text */
-  justify-content: left; /* Horizontally centers text */
-}
-
-
-.image2 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 100px 150px;
-  background-image: url('../images/spaghettijunction72.jpg');
-  background-repeat: no-repeat;
-  display: block;
-  object-fit: cover; /* Scales and crops the image to fill the container */
-  object-position: 50% 50%; /* Centers the cropped area (adjust as needed) */
-}
-
-
-.image3 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 100px 150px;
-  background-image: url('../images/aucklandskyline72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.image4 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/tuatara72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.image5 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/townhall72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image6 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/artgallery72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image7 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 100px 150px;
-  background-image: url('../images/skytower72.jpg');
-  background-repeat: no-repeat;
-  display: block;
-}
-
-
-.image8 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/wellington72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image9 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/beehive72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image10 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/cablecar72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image11 {
-  width: auto;
-  height: 400px;
-  margin-left: 50px;
-  padding: 300px 250px;
-  background-image: url('../images/tepapa72.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+button:hover {
+    background-color: #0056b3;
 }
 
 
@@ -554,7 +424,6 @@ table {
     position: relative;
     bottom: 0;
     width: 100%;
-	
 }
 
 .footer-content p {
